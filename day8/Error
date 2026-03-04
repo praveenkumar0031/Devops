@@ -1,5 +1,4 @@
 FROM httpd:latest
 RUN apt update -y
-COPY host/index.html /htdocs
+COPY host/index.html htdocs
 ENTRYPOINT apachectl -D FOREGROUND
-

@@ -1,0 +1,29 @@
+
+
+services:
+  web:
+    image: httpd:latest
+    container_name: my-httpd
+    ports:
+      - "81:80"
+    volumes:
+      - ./html:/usr/local/apache2/htdocs/
+    depends_on:
+      - db
+
+  db:
+    image: mysql:latest
+    container_name: my-mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: mydatabase
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data:
