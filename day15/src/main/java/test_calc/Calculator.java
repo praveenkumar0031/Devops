@@ -1,0 +1,17 @@
+package test_calc;
+
+public class Calculator {
+
+	public Calculator() {
+		// TODO Auto-generated constructor stub
+		
+	}
+	public int add(int a,int b) {
+		return a+b;
+	}
+	public int sub(int a,int b) {
+		return a-b;
+	}
+
+
+}
